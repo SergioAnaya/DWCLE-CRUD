@@ -1,0 +1,68 @@
+<div class="users-container">
+    <div class="adduser-btn-container">
+        <a routerLink="create"
+            ><button mat-fab color="primary"><mat-icon>add</mat-icon></button></a
+        >
+    </div>
+    <!-- <form class="adduser-container" #movieForm>
+        <mat-form-field>
+            <input matInput placeholder="Title" name="title" [(ngModel)]="movieData.title" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Director" name="director" [(ngModel)]="movieData.director" />
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Year" name="year" [(ngModel)]="movieData.year" />
+        </mat-form-field>
+
+        <ng-container *ngIf="editing; else addTemplate">
+            <button mat-raised-button color="primary" (click)="editMovie(movieData.id)">Update</button>
+            <a mat-raised-button color="warn" (click)="cancelEdit()">Cancel</a>
+        </ng-container>
+        <ng-template #addTemplate>
+            <button mat-raised-button color="primary" (click)="addMovie(movieData)">Add</button>
+        </ng-template>
+    </form> -->
+    <table class="users-table" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let user">{{ user.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef>Title</th>
+            <td mat-cell *matCellDef="let user">{{ user.username }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Director</th>
+            <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastname">
+            <th mat-header-cell *matHeaderCellDef>Lastname</th>
+            <td mat-cell *matCellDef="let user">{{ user.lastname }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="userType">
+            <th mat-header-cell *matHeaderCellDef>User Type</th>
+            <td mat-cell *matCellDef="let user">{{ user.userTypeId.user_type_id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef class="actions-cell">Actions</th>
+            <td mat-cell *matCellDef="let user">
+                <div class="list-btn-container">
+                    <button mat-mini-fab color="primary">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button mat-mini-fab color="primary">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+</div>

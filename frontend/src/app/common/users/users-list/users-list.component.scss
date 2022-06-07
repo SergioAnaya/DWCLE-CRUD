@@ -1,0 +1,35 @@
+.users-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    width: 100%;
+}
+
+.users-container .adduser-btn-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 75%;
+}
+
+.users-container .adduser-btn-container a {
+    color: white;
+    text-decoration: none;
+}
+
+.users-container .adduser-btn-container button {
+    margin-bottom: 5vh;
+}
+
+.users-container table {
+    width: 75% !important;
+}
+
+.users-container .actions-cell {
+    width: 5vw;
+}
+
+.users-container .list-btn-container {
+    display: flex;
+    justify-content: space-between;
+}
