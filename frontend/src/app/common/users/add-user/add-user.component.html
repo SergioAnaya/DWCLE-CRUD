@@ -1,0 +1,61 @@
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="addusers-container">
+    <div class="form-field-group">
+        <mat-form-field class="first-child" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput maxlength="30" />
+            <mat-error
+                *ngIf="(!this.addForm.get('name').value && this.addForm.get('name').touched) || this.submitted === true"
+                >The Name cannot be empty</mat-error
+            >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Lastname</mat-label>
+            <input formControlName="lastname" matInput #input maxlength="30" />
+            <mat-error
+                *ngIf="
+                    (!this.addForm.get('lastname').value && this.addForm.get('lastname').touched) ||
+                    this.submitted === true
+                "
+                >The Lastname cannot be empty</mat-error
+            >
+        </mat-form-field>
+    </div>
+
+    <div class="form-field-group">
+        <mat-form-field class="first-child" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input formControlName="username" matInput #input maxlength="20" />
+            <mat-error
+                *ngIf="
+                    (!this.addForm.get('username').value && this.addForm.get('username').touched) ||
+                    this.submitted === true
+                "
+                >The Username cannot be empty</mat-error
+            >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput maxlength="20" [type]="hide ? 'password' : 'text'" />
+            <button
+                mat-icon-button
+                matSuffix
+                (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide"
+            >
+                <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error
+                *ngIf="
+                    (!this.addForm.get('password').value && this.addForm.get('password').touched) ||
+                    this.submitted === true
+                "
+                >The Password cannot be empty</mat-error
+            >
+        </mat-form-field>
+    </div>
+
+    <div class="form-field-group">
+        <button mat-flat-button color="primary">Add</button>
+    </div>
+</form>

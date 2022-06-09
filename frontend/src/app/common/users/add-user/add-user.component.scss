@@ -1,0 +1,23 @@
+.addusers-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+    width: 100%;
+    height: 40vh;
+}
+
+.addusers-container .form-field-group {
+    display: flex;
+    width: 40%;
+    margin-bottom: 5vh;
+}
+
+.addusers-container .form-field-group mat-form-field.first-child {
+    margin-right: 2vw;
+}
+
+.addusers-container a {
+    color: white;
+    text-decoration: none;
+}
